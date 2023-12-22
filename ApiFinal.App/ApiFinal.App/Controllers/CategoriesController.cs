@@ -1,4 +1,5 @@
 ﻿using ApiFinal.App.Contexts;
+using ApiFinal.App.Dtos.Categories;
 using ApiFinal.App.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,10 +32,79 @@ namespace ApiFinal.App.Controllers
 
             if(category == null)
             {
-                return NotFound();  
+                return StatusCode(404);  
             }
 
             return StatusCode(200, category);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CategoryPostDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            if(_context.Categories.Any(x=>x.Name.Trim().ToLower() == dto.Name.ToLower())) 
+            {
+                return StatusCode(404, new { description = $"{dto.Name} already exist" });
+            }
+             
+            Category category = new Category
+            {
+                Name = dto.Name,
+                Description = dto.Description
+            };
+
+            await _context.Categories.AddAsync(category);
+            await _context.SaveChangesAsync();
+            return StatusCode(201, category);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+
+            Category? category = await _context.Categories.
+                Where(x => x.Id == id).FirstOrDefaultAsync();
+
+            if (category == null)
+            {
+                return StatusCode(404);
+            }
+
+            _context.Remove(category);
+            await _context.SaveChangesAsync();
+            return StatusCode(204);
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, Category category)
+        {
+            if(!ModelState.IsValid) 
+            {
+                return BadRequest();
+            }
+
+            if (_context.Categories.Any(x => x.Name.Trim().ToLower() == category.Name.ToLower() && x.Id !=id))
+            {
+                return StatusCode(404, new { description = $"{category.Name} already exist" });
+            }
+
+            Category? updatedcategory = await _context.Categories.
+              Where(x => x.Id == id).FirstOrDefaultAsync();
+
+            if (updatedcategory == null)
+            {
+                return StatusCode(404);
+            }
+
+            updatedcategory.Name = category.Name;
+            updatedcategory.Description = category.Description;
+            await _context.SaveChangesAsync();
+            return StatusCode(204);
         }
     }
 }
