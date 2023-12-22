@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiFinal.App.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class CategoriesController : ControllerBase
     {
         private readonly ApiDbContext _context;
@@ -41,21 +41,12 @@ namespace ApiFinal.App.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryPostDto dto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
-
             if(_context.Categories.Any(x=>x.Name.Trim().ToLower() == dto.Name.ToLower())) 
             {
                 return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
-             
-            Category category = new Category
-            {
-                Name = dto.Name,
-                Description = dto.Description
-            };
+
+            Category category = Map(dto);
 
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
@@ -105,6 +96,11 @@ namespace ApiFinal.App.Controllers
             updatedcategory.Description = category.Description;
             await _context.SaveChangesAsync();
             return StatusCode(204);
+        }
+
+        private Category Map(CategoryPostDto dto) 
+        {
+            return new Category { Name = dto.Name, Description = dto.Description };
         }
     }
 }

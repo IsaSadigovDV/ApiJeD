@@ -1,6 +1,8 @@
-﻿namespace ApiFinal.App.Dtos.Categories
+﻿using FluentValidation;
+
+namespace ApiFinal.App.Dtos.Categories
 {
-    public class CategoryPostDto
+    public record CategoryPostDto
     {
         public string Name { get; set; }
         public string Description { get; set; }
