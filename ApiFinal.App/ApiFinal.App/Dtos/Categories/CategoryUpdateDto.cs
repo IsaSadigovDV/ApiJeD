@@ -1,8 +1,6 @@
-﻿using FluentValidation;
-
-namespace ApiFinal.App.Dtos.Categories
+﻿namespace ApiFinal.App.Dtos.Categories
 {
-    public record CategoryPostDto
+    public class CategoryUpdateDto
     {
         public string Name { get; set; } = null!;
         public string Description { get; set; } = null!;

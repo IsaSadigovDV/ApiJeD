@@ -1,6 +1,7 @@
 ﻿using ApiFinal.App.Contexts;
 using ApiFinal.App.Dtos.Categories;
 using ApiFinal.App.Entities;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,10 +12,12 @@ namespace ApiFinal.App.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ApiDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CategoriesController(ApiDbContext context)
+        public CategoriesController(ApiDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -46,7 +49,7 @@ namespace ApiFinal.App.Controllers
                 return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
 
-            Category category = Map(dto);
+            Category category = _mapper.Map<Category>(dto);
 
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
@@ -72,16 +75,11 @@ namespace ApiFinal.App.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Category category)
+        public async Task<IActionResult> Update(int id, [FromBody]CategoryUpdateDto dto)
         {
-            if(!ModelState.IsValid) 
+            if (_context.Categories.Any(x => x.Name.Trim().ToLower() == dto.Name.ToLower() && x.Id !=id))
             {
-                return BadRequest();
-            }
-
-            if (_context.Categories.Any(x => x.Name.Trim().ToLower() == category.Name.ToLower() && x.Id !=id))
-            {
-                return StatusCode(404, new { description = $"{category.Name} already exist" });
+                return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
 
             Category? updatedcategory = await _context.Categories.
@@ -92,15 +90,14 @@ namespace ApiFinal.App.Controllers
                 return StatusCode(404);
             }
 
-            updatedcategory.Name = category.Name;
-            updatedcategory.Description = category.Description;
+            updatedcategory = _mapper.Map<Category>(updatedcategory);
             await _context.SaveChangesAsync();
             return StatusCode(204);
         }
 
-        private Category Map(CategoryPostDto dto) 
-        {
-            return new Category { Name = dto.Name, Description = dto.Description };
-        }
+        //private Category Map(CategoryPostDto dto) 
+        //{
+        //    return new Category { Name = dto.Name, Description = dto.Description };
+        //}
     }
 }

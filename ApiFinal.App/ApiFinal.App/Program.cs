@@ -1,4 +1,5 @@
 using ApiFinal.App.Contexts;
+using ApiFinal.App.Profiles.CategoriesMap;
 using ApiFinal.App.Validations.Categories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -13,8 +14,8 @@ builder.Services.AddDbContext<ApiDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Huseyn"));
 }
 );
-builder.Services.AddControllers()
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CategoryPostDtoValidation>());
+builder.Services.AddControllers()?.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CategoryPostDtoValidation>());
+builder.Services.AddAutoMapper(typeof(CategoryMapProfile));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
