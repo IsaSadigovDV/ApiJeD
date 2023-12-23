@@ -1,7 +1,8 @@
 ﻿using ApiFinal.App.Contexts;
 using ApiFinal.App.Dtos.Categories;
 using ApiFinal.App.Entities;
-using ApiFinal.App.Repositories;
+using ApiFinal.App.Repositories.Implementations;
+using ApiFinal.App.Repositories.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,9 +14,9 @@ namespace ApiFinal.App.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly IMapper _mapper;
-        private readonly CategoryRepository _repository;
+        private readonly ICategoryRepository _repository;
 
-        public CategoriesController(IMapper mapper, CategoryRepository repository)
+        public CategoriesController(IMapper mapper, ICategoryRepository repository)
         {
             _mapper = mapper;
             _repository = repository;
@@ -24,7 +25,7 @@ namespace ApiFinal.App.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            IQueryable<Category> query = await _repository.GetAllAsync();
+            IQueryable<Category> query = await _repository.GetAllAsync(x => !x.IsDeleted);
             
             List<CategoryGetDto> categories = new List<CategoryGetDto>();
 
@@ -35,7 +36,7 @@ namespace ApiFinal.App.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            Category? category = await _repository.GetByIdAsync(id);
+            Category? category = await _repository.GetAsync(x => x.Id == id && !x.IsDeleted);
 
             if(category == null)
             {
@@ -50,7 +51,7 @@ namespace ApiFinal.App.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryPostDto dto)
         {
-            if(await _repository.IsExsist(dto.Name)) 
+            if(await _repository.IsExsist(x => x.Name == dto.Name)) 
             {
                 return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
@@ -66,14 +67,15 @@ namespace ApiFinal.App.Controllers
         public async Task<IActionResult> Delete(int id)
         {
 
-            Category? category = await _repository.GetByIdAsync(id);
+            Category? category = await _repository.GetAsync(x => x.Id == id && !x.IsDeleted);
 
             if (category == null)
             {
                 return StatusCode(404);
             }
 
-            _repository.Remove(category);
+            category.IsDeleted = true;
+            _repository.Update(category);
             await _repository.SaveAsync();
             return StatusCode(204);
 
@@ -82,12 +84,12 @@ namespace ApiFinal.App.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody]CategoryUpdateDto dto)
         {
-            if (await _repository.IsExsist(dto.Name, id))
+            if (await _repository.IsExsist(x=> x.Id==id && x.Name.Trim().ToLower() == dto.Name.Trim().ToLower()))
             {
                 return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
 
-            Category? updatedcategory = await _repository.GetByIdAsync(id);
+            Category? updatedcategory = await _repository.GetAsync(x => x.Id == id && !x.IsDeleted);
 
             if (updatedcategory == null)
             {

@@ -6,8 +6,9 @@ namespace ApiFinal.App.Entities
     {
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; } = null!;
+        public string Name { get; set; }
         [Required]
-        public string Description { get; set; } = null!;
+        public string Description { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

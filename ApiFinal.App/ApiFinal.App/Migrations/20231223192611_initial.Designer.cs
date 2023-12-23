@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiFinal.App.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    [Migration("20231220123243_initial")]
+    [Migration("20231223192611_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -31,6 +31,13 @@ namespace ApiFinal.App.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
