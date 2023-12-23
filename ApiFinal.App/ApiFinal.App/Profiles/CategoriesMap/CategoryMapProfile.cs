@@ -10,6 +10,7 @@ namespace ApiFinal.App.Profiles.CategoriesMap
         {
             CreateMap<CategoryPostDto, Category>();
             CreateMap<CategoryUpdateDto, Category>();
+            CreateMap<Category, CategoryGetDto>();
         }
     }
 }

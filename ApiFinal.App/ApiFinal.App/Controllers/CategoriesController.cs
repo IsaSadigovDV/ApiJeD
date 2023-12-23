@@ -23,8 +23,15 @@ namespace ApiFinal.App.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            IEnumerable<Category> categories = 
-                await _context.Categories.ToListAsync();
+            //IEnumerable<Category> categories = 
+            //    await _context.Categories.ToListAsync();
+
+            IQueryable<Category> query = _context.Categories.AsQueryable();
+            
+            List<CategoryGetDto> categories = new List<CategoryGetDto>();
+
+            categories = await query.Select(x => new CategoryGetDto { Name = x.Name, Description = x.Description}).ToListAsync();
+
             return StatusCode(200, categories);  
         }
         [HttpGet("{id}")]
@@ -38,7 +45,9 @@ namespace ApiFinal.App.Controllers
                 return StatusCode(404);  
             }
 
-            return StatusCode(200, category);
+            CategoryGetDto getDto = _mapper.Map<CategoryGetDto>(category);
+
+            return StatusCode(200, getDto);
         }
 
         [HttpPost]
@@ -94,10 +103,5 @@ namespace ApiFinal.App.Controllers
             await _context.SaveChangesAsync();
             return StatusCode(204);
         }
-
-        //private Category Map(CategoryPostDto dto) 
-        //{
-        //    return new Category { Name = dto.Name, Description = dto.Description };
-        //}
     }
 }
