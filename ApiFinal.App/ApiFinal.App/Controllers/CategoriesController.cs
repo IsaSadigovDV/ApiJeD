@@ -1,6 +1,7 @@
 ﻿using ApiFinal.App.Contexts;
 using ApiFinal.App.Dtos.Categories;
 using ApiFinal.App.Entities;
+using ApiFinal.App.Repositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,22 +12,19 @@ namespace ApiFinal.App.Controllers
     [Route("api/[controller]")]
     public class CategoriesController : ControllerBase
     {
-        private readonly ApiDbContext _context;
         private readonly IMapper _mapper;
+        private readonly CategoryRepository _repository;
 
-        public CategoriesController(ApiDbContext context, IMapper mapper)
+        public CategoriesController(IMapper mapper, CategoryRepository repository)
         {
-            _context = context;
             _mapper = mapper;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            //IEnumerable<Category> categories = 
-            //    await _context.Categories.ToListAsync();
-
-            IQueryable<Category> query = _context.Categories.AsQueryable();
+            IQueryable<Category> query = await _repository.GetAllAsync();
             
             List<CategoryGetDto> categories = new List<CategoryGetDto>();
 
@@ -37,8 +35,7 @@ namespace ApiFinal.App.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            Category? category = await _context.Categories.
-                Where(x => x.Id == id).FirstOrDefaultAsync();
+            Category? category = await _repository.GetByIdAsync(id);
 
             if(category == null)
             {
@@ -53,15 +50,15 @@ namespace ApiFinal.App.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryPostDto dto)
         {
-            if(_context.Categories.Any(x=>x.Name.Trim().ToLower() == dto.Name.ToLower())) 
+            if(await _repository.IsExsist(dto.Name)) 
             {
                 return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
 
             Category category = _mapper.Map<Category>(dto);
 
-            await _context.Categories.AddAsync(category);
-            await _context.SaveChangesAsync();
+            await _repository.AddAsync(category);
+            await _repository.SaveAsync();
             return StatusCode(201, category);
         }
 
@@ -69,16 +66,15 @@ namespace ApiFinal.App.Controllers
         public async Task<IActionResult> Delete(int id)
         {
 
-            Category? category = await _context.Categories.
-                Where(x => x.Id == id).FirstOrDefaultAsync();
+            Category? category = await _repository.GetByIdAsync(id);
 
             if (category == null)
             {
                 return StatusCode(404);
             }
 
-            _context.Remove(category);
-            await _context.SaveChangesAsync();
+            _repository.Remove(category);
+            await _repository.SaveAsync();
             return StatusCode(204);
 
         }
@@ -86,21 +82,22 @@ namespace ApiFinal.App.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody]CategoryUpdateDto dto)
         {
-            if (_context.Categories.Any(x => x.Name.Trim().ToLower() == dto.Name.ToLower() && x.Id !=id))
+            if (await _repository.IsExsist(dto.Name, id))
             {
                 return StatusCode(404, new { description = $"{dto.Name} already exist" });
             }
 
-            Category? updatedcategory = await _context.Categories.
-              Where(x => x.Id == id).FirstOrDefaultAsync();
+            Category? updatedcategory = await _repository.GetByIdAsync(id);
 
             if (updatedcategory == null)
             {
                 return StatusCode(404);
             }
 
-            updatedcategory = _mapper.Map<Category>(updatedcategory);
-            await _context.SaveChangesAsync();
+            updatedcategory.Name = dto.Name;
+            updatedcategory.Description = dto.Description;
+            await _repository.Update(updatedcategory);
+            await _repository.SaveAsync();
             return StatusCode(204);
         }
     }
