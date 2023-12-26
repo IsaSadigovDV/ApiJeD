@@ -8,11 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "ApiFinal.App/1.0.0": {
         "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "FluentValidation.AspNetCore": "11.3.0",
-          "FluentValidation.DependencyInjectionExtensions": "11.9.0",
+          "ApiFinal.Service": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
-          "Microsoft.EntityFrameworkCore": "7.0.14",
           "Microsoft.EntityFrameworkCore.Design": "7.0.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.14",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.14",
@@ -671,6 +668,32 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "ApiFinal.Core/1.0.0": {
+        "runtime": {
+          "ApiFinal.Core.dll": {}
+        }
+      },
+      "ApiFinal.Data/1.0.0": {
+        "dependencies": {
+          "ApiFinal.Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.14"
+        },
+        "runtime": {
+          "ApiFinal.Data.dll": {}
+        }
+      },
+      "ApiFinal.Service/1.0.0": {
+        "dependencies": {
+          "ApiFinal.Data": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation": "11.9.0",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.9.0"
+        },
+        "runtime": {
+          "ApiFinal.Service.dll": {}
+        }
       }
     }
   },
@@ -1183,6 +1206,21 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ApiFinal.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApiFinal.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApiFinal.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

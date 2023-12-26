@@ -155,3 +155,9 @@ C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Core.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Data.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Service.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Service.pdb
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Core.pdb
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Data.pdb

@@ -1,12 +1,6 @@
-﻿using ApiFinal.App.Contexts;
-using ApiFinal.App.Dtos.Categories;
-using ApiFinal.App.Entities;
-using ApiFinal.App.Repositories.Implementations;
-using ApiFinal.App.Repositories.Interfaces;
-using ApiFinal.App.Services.Interfaces;
-using AutoMapper;
+﻿using ApiFinal.Service.Dtos.Categories;
+using ApiFinal.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ApiFinal.App.Controllers
 {
@@ -30,7 +24,6 @@ namespace ApiFinal.App.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var res = await _categoryService.GetAsync(id);
-
             return StatusCode(res.StatusCode, res);
         }
 
@@ -46,7 +39,6 @@ namespace ApiFinal.App.Controllers
         {
             var res = await _categoryService.RemoveAsync(id);
             return StatusCode(res.StatusCode);
-
         }
 
         [HttpPut("{id}")]

@@ -1238,6 +1238,47 @@
             "rid": "win"
           }
         }
+      },
+      "ApiFinal.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ApiFinal.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiFinal.Core.dll": {}
+        }
+      },
+      "ApiFinal.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "ApiFinal.Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.14"
+        },
+        "compile": {
+          "bin/placeholder/ApiFinal.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiFinal.Data.dll": {}
+        }
+      },
+      "ApiFinal.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "ApiFinal.Data": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation": "11.9.0",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.9.0"
+        },
+        "compile": {
+          "bin/placeholder/ApiFinal.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ApiFinal.Service.dll": {}
+        }
       }
     }
   },
@@ -3492,15 +3533,27 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ApiFinal.Core/1.0.0": {
+      "type": "project",
+      "path": "../ApiFinal.Core/ApiFinal.Core.csproj",
+      "msbuildProject": "../ApiFinal.Core/ApiFinal.Core.csproj"
+    },
+    "ApiFinal.Data/1.0.0": {
+      "type": "project",
+      "path": "../ApiFinal.Data/ApiFinal.Data.csproj",
+      "msbuildProject": "../ApiFinal.Data/ApiFinal.Data.csproj"
+    },
+    "ApiFinal.Service/1.0.0": {
+      "type": "project",
+      "path": "../ApiFinal.Service/ApiFinal.Service.csproj",
+      "msbuildProject": "../ApiFinal.Service/ApiFinal.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
-      "FluentValidation.AspNetCore >= 11.3.0",
-      "FluentValidation.DependencyInjectionExtensions >= 11.9.0",
+      "ApiFinal.Service >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.3",
-      "Microsoft.EntityFrameworkCore >= 7.0.14",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.14",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.14",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.14",
@@ -3533,7 +3586,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Service\\ApiFinal.Service.csproj": {
+              "projectPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Service\\ApiFinal.Service.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3546,25 +3603,9 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-            "target": "Package",
-            "version": "[12.0.1, )"
-          },
-          "FluentValidation.AspNetCore": {
-            "target": "Package",
-            "version": "[11.3.0, )"
-          },
-          "FluentValidation.DependencyInjectionExtensions": {
-            "target": "Package",
-            "version": "[11.9.0, )"
-          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.3, )"
-          },
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[7.0.14, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

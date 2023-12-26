@@ -1,10 +1,10 @@
-using ApiFinal.App.Contexts;
-using ApiFinal.App.Profiles.CategoriesMap;
-using ApiFinal.App.Repositories.Implementations;
-using ApiFinal.App.Repositories.Interfaces;
-using ApiFinal.App.Services.Implementations;
-using ApiFinal.App.Services.Interfaces;
-using ApiFinal.App.Validations.Categories;
+using ApiFinal.Core.Repositories.Interfaces;
+using ApiFinal.Data.Contexts;
+using ApiFinal.Data.Repositories.Implementations;
+using ApiFinal.Service.Profiles.CategoriesMap;
+using ApiFinal.Service.Services.Implementations;
+using ApiFinal.Service.Services.Interfaces;
+using ApiFinal.Service.Validations.Categories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
