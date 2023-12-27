@@ -42,7 +42,7 @@ namespace ApiFinal.App.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody]CategoryUpdateDto dto)
+        public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
         {
             var res = await _categoryService.UpdateAsync(id, dto);
             return StatusCode(res.StatusCode, res);

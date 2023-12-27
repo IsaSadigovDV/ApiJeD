@@ -161,3 +161,4 @@ C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Service.pdb
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Core.pdb
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.Data.pdb
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\ApiFinal.App.staticwebassets.runtime.json

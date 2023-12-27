@@ -24,4 +24,8 @@
     <ProjectReference Include="..\ApiFinal.Service\ApiFinal.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\images\" />
+  </ItemGroup>
+
 </Project>

@@ -19,14 +19,34 @@ namespace ApiFinal.Data.Repositories.Implementations
             await _context.Set<T>().AddAsync(entity);
         }
 
-        public async Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> expression)
+        public async Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> expression, params string[] includes)
         {
-            return  _context.Set<T>().Where(expression);
+            var query = _context.Set<T>().Where(expression);
+
+            if (includes != null)
+            {
+                foreach (var item in includes)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return query;
         }
 
-        public async Task<T> GetAsync(Expression<Func<T, bool>> expression)
+        public async Task<T> GetAsync(Expression<Func<T, bool>> expression, params string[] includes)
         {
-            return await _context.Set<T>().Where(expression).FirstOrDefaultAsync();
+            var query = _context.Set<T>().Where(expression);
+
+            if (includes != null)
+            {
+                foreach (var item in includes)
+                {
+                    query = query.Include(item);
+                }
+            }
+
+            return await query.FirstOrDefaultAsync();
         }
 
         public async Task<bool> IsExsist(Expression<Func<T, bool>> expression)

@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "TkuiLn5Bsj/sZptivQf+kyeIJ0B05DwO92PFflkjnck=",
+  "Hash": "g5a5WlA+GoM7A8+C6eWEBTSueyO7Qgobvx5MuOqSkuo=",
   "Source": "ApiFinal.App",
   "BasePath": "_content/ApiFinal.App",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ApiFinal.App\\wwwroot",
+      "Source": "ApiFinal.App",
+      "ContentRoot": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\",
+      "BasePath": "_content/ApiFinal.App",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

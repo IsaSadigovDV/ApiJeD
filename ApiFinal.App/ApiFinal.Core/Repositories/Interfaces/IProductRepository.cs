@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ApiFinal.Core.Repositories.Interfaces
 {
-    internal interface IProductRepository : IRepository<Product>
+    public interface IProductRepository : IRepository<Product>
     {
     }
 }

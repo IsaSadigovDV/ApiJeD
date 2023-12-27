@@ -13,13 +13,6 @@ namespace ApiFinal.Service.Validations.Categories
                                 .WithMessage("Name can not null")
                                 .MinimumLength(3)
                                 .MaximumLength(30);
-
-            RuleFor(x => x.Description).NotEmpty()
-                                .WithMessage("Description can not empty")
-                                .NotNull()
-                                .WithMessage("Description can not null")
-                                .MinimumLength(3)
-                                .MaximumLength(100);
         }
     }
 }

@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ApiFinal.Core.Entities;
+using ApiFinal.Core.Repositories.Interfaces;
+using ApiFinal.Data.Contexts;
 
 namespace ApiFinal.Data.Repositories.Implementations
 {
-    internal class ProductRepository
+    public class ProductRepository : Repository<Product>, IProductRepository
     {
+        public ProductRepository(ApiDbContext context) : base(context)
+        {
+            
+        }
     }
 }
