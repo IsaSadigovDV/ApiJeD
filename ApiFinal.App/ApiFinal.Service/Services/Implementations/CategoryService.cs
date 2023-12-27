@@ -38,7 +38,7 @@ namespace ApiFinal.Service.Services.Implementations
 
             List<CategoryGetDto> categories = new List<CategoryGetDto>();
 
-            categories = await query.Select(x => new CategoryGetDto { Name = x.Name, Description = x.Description }).ToListAsync();
+            categories = await query.Select(x => new CategoryGetDto { Name = x.Name }).ToListAsync();
         
             return new ApiResponse { Items = categories, StatusCode = 200};
         }
@@ -82,7 +82,6 @@ namespace ApiFinal.Service.Services.Implementations
             }
 
             category.Name = dto.Name;
-            category.Description = dto.Description;
             await _repository.Update(category);
             await _repository.SaveAsync();
             return new ApiResponse { StatusCode = 200 };
