@@ -11,7 +11,7 @@ namespace ApiFinal.Service.Extentions
     {
         public static bool IsImage(this IFormFile file)
         {
-            return file.ContentType.Contains("Image");
+            return file.ContentType.Contains("image");
         }
 
         public static bool IsSizeOk(this IFormFile file, int mb)

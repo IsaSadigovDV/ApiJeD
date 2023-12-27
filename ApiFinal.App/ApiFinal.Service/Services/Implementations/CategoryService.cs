@@ -82,6 +82,7 @@ namespace ApiFinal.Service.Services.Implementations
             }
 
             category.Name = dto.Name;
+            category.UpdatedAt = DateTime.Now;
             await _repository.Update(category);
             await _repository.SaveAsync();
             return new ApiResponse { StatusCode = 200 };

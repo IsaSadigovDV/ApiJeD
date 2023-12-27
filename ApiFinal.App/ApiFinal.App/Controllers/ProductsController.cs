@@ -31,7 +31,7 @@ namespace ApiFinal.App.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ProductPostDto dto)
+        public async Task<IActionResult> Create([FromForm] ProductPostDto dto)
         {
             var res = await _productService.CreateAsync(dto);
             return StatusCode(res.StatusCode, res);
