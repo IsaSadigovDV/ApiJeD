@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace ApiFinal.Service.Services.Implementations
 {
@@ -21,13 +22,15 @@ namespace ApiFinal.Service.Services.Implementations
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
+        private readonly IHttpContextAccessor _http;
 
-        public ProductService(IProductRepository productRepository, IMapper mapper, IWebHostEnvironment env, ICategoryRepository categoryRepository)
+        public ProductService(IProductRepository productRepository, IMapper mapper, IWebHostEnvironment env, ICategoryRepository categoryRepository, IHttpContextAccessor http)
         {
             _productRepository = productRepository;
             _mapper = mapper;
             _env = env;
             _categoryRepository = categoryRepository;
+            _http = http;
         }
 
         public async Task<ApiResponse> CreateAsync(ProductPostDto dto)
@@ -39,6 +42,7 @@ namespace ApiFinal.Service.Services.Implementations
 
             Product product = _mapper.Map<Product>(dto);
             product.Image = dto.File.SaveFile(_env.WebRootPath, "assets/images");
+            product.ImageUrl = _http.HttpContext.Request.Scheme + "://" + _http.HttpContext.Request.Host + $"/assets/images/{product.Image}";
             await _productRepository.AddAsync(product);
             await _productRepository.SaveAsync();
             return new ApiResponse { StatusCode = 201 };
@@ -52,6 +56,7 @@ namespace ApiFinal.Service.Services.Implementations
                 query.Select(x => new ProductGetDto
                 {
                     Image = x.Image,
+                    ImageUrl = x.ImageUrl,
                     CategoryId = x.CategoryId,
                     Name = x.Name,
                     Price = x.Price,

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g5a5WlA+GoM7A8+C6eWEBTSueyO7Qgobvx5MuOqSkuo=",
+  "Hash": "MqNbHjdauJa0QpynhK/8nnZ8de+Xfd15zE6ykYWYjW8=",
   "Source": "ApiFinal.App",
   "BasePath": "_content/ApiFinal.App",
   "Mode": "Default",
@@ -15,5 +15,57 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png",
+      "SourceId": "ApiFinal.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\",
+      "BasePath": "_content/ApiFinal.App",
+      "RelativePath": "assets/images/4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png"
+    },
+    {
+      "Identity": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\cbcb6f2e-30f0-4f73-874e-4d66f4c0bd26File",
+      "SourceId": "ApiFinal.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\",
+      "BasePath": "_content/ApiFinal.App",
+      "RelativePath": "assets/images/cbcb6f2e-30f0-4f73-874e-4d66f4c0bd26File",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\cbcb6f2e-30f0-4f73-874e-4d66f4c0bd26File"
+    },
+    {
+      "Identity": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\f9cb5b74-8ae5-4cd4-9b2e-8091553cc159File",
+      "SourceId": "ApiFinal.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\",
+      "BasePath": "_content/ApiFinal.App",
+      "RelativePath": "assets/images/f9cb5b74-8ae5-4cd4-9b2e-8091553cc159File",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\f9cb5b74-8ae5-4cd4-9b2e-8091553cc159File"
+    }
+  ]
 }

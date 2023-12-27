@@ -13,8 +13,6 @@ namespace ApiFinal.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            //builder.Property(x => x.Name).HasMaxLength(50).IsRequired(true).IsUnicode(true);
-            //builder.Property(x => x.Price).HasMaxLength(20).IsRequired(true).IsUnicode(true);
             builder.Property(x => x.CreatedAt).HasDefaultValue(DateTime.UtcNow.AddHours(4));
         }
     }

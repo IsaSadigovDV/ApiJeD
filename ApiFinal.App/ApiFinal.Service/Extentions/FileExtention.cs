@@ -21,7 +21,7 @@ namespace ApiFinal.Service.Extentions
 
         public static string SaveFile(this IFormFile file, string root, string path)
         {
-            string FileName = Guid.NewGuid().ToString() + file.Name;
+            string FileName = Guid.NewGuid().ToString() + file.FileName;
             string FullPath = Path.Combine(root, path, FileName);
 
             using (FileStream stream = new FileStream(FullPath, FileMode.Create))

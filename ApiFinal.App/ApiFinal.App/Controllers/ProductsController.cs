@@ -45,7 +45,7 @@ namespace ApiFinal.App.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ProductUpdateDto dto)
+        public async Task<IActionResult> Update(int id, [FromForm] ProductUpdateDto dto)
         {
             var res = await _productService.UpdateAsync(id, dto);
             return StatusCode(res.StatusCode, res);
