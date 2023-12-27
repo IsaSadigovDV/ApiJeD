@@ -19,6 +19,14 @@ builder.Services.AddDbContext<ApiDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("Huseyn"));
 }
 );
+
+builder.Services.AddCors(o => o.AddPolicy("JedFinal", builder =>
+{
+    builder.AllowAnyHeader();
+    builder.AllowAnyMethod();
+    builder.AllowAnyOrigin();
+}));
+
 builder.Services.AddControllers()?.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CategoryPostDtoValidation>());
 builder.Services.AddAutoMapper(typeof(CategoryMapProfile));
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
@@ -39,6 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("JedFinal");
 
 app.UseStaticFiles();
 
