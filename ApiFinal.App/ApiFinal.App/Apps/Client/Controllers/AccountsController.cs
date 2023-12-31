@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 
 namespace ApiFinal.App.Apps.Client.Controllers
 {
@@ -33,6 +36,39 @@ namespace ApiFinal.App.Apps.Client.Controllers
             await _userManager.AddToRoleAsync(identityUser, "Admin");
             return Ok();
         }
+
+        public async Task<IActionResult> Login([FromBody]LoginDto dto)
+        {
+            IdentityUser? user = await _userManager.FindByNameAsync(dto.Username);
+            if(user == null)
+            {
+                return NotFound();
+            }
+
+            if(!await _userManager.CheckPasswordAsync(user, dto.Password))
+            {
+                return NotFound();
+            }
+            string keyStr = "dbd6dc8f-6ee2-4fbb-a38e-764b315caa18";
+            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyStr));
+            SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            List<Claim> claims = new List<Claim> 
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+            };
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            foreach (string role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            return Ok();
+        }
+
         //[HttpPost]
         //public async Task<IActionResult> CreateRole()
         //{
