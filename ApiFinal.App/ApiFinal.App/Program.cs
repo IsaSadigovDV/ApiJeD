@@ -27,7 +27,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(opt =>
 
 
 builder.Services.AddCors(o => o.AddPolicy("JedFinal", builder =>
-{
+{   
     builder.AllowAnyHeader();
     builder.AllowAnyMethod();
     builder.AllowAnyOrigin();
