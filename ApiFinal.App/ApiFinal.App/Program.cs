@@ -8,6 +8,7 @@ using ApiFinal.Service.Services.Interfaces;
 using ApiFinal.Service.Validations.Categories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,9 +17,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<ApiDbContext>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("Huseyn"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 }
 );
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(opt =>
+{
+    opt.Password.RequiredLength = 8;
+}).AddDefaultTokenProviders().AddEntityFrameworkStores<ApiDbContext>();
+
 
 builder.Services.AddCors(o => o.AddPolicy("JedFinal", builder =>
 {

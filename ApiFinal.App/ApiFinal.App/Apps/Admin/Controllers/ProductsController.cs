@@ -5,9 +5,9 @@ using ApiFinal.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiFinal.App.Controllers
+namespace ApiFinal.App.Admin.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/admin/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {

@@ -1,15 +1,43 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png",
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\3567f84b-dd9c-433b-8430-bac13848fd62Image.png",
+      "PackagePath": "staticwebassets\\assets\\images\\3567f84b-dd9c-433b-8430-bac13848fd62Image.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\49d8bede-2f59-48f7-9617-6c70136064acImage.png",
+      "PackagePath": "staticwebassets\\assets\\images\\49d8bede-2f59-48f7-9617-6c70136064acImage.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png",
       "PackagePath": "staticwebassets\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png"
     },
     {
-      "Id": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\cbcb6f2e-30f0-4f73-874e-4d66f4c0bd26File",
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\501e88e8-75fe-48d5-97a2-95a8f13c23deImage.png",
+      "PackagePath": "staticwebassets\\assets\\images\\501e88e8-75fe-48d5-97a2-95a8f13c23deImage.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\b3eeadae-876a-4763-ab9e-936e11cfa497Image.png",
+      "PackagePath": "staticwebassets\\assets\\images\\b3eeadae-876a-4763-ab9e-936e11cfa497Image.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\c0bd83ac-44a0-4340-9a45-82ec97ec4285Image.png",
+      "PackagePath": "staticwebassets\\assets\\images\\c0bd83ac-44a0-4340-9a45-82ec97ec4285Image.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\cbcb6f2e-30f0-4f73-874e-4d66f4c0bd26File",
       "PackagePath": "staticwebassets\\assets\\images"
     },
     {
-      "Id": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\f9cb5b74-8ae5-4cd4-9b2e-8091553cc159File",
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\e003b6a6-718e-4772-9e5a-b269294042ceImage.png",
+      "PackagePath": "staticwebassets\\assets\\images\\e003b6a6-718e-4772-9e5a-b269294042ceImage.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\e3cc9454-4631-4de0-b739-9792d3c520a4article6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\e3cc9454-4631-4de0-b739-9792d3c520a4article6.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\f9cb5b74-8ae5-4cd4-9b2e-8091553cc159File",
       "PackagePath": "staticwebassets\\assets\\images"
     },
     {
