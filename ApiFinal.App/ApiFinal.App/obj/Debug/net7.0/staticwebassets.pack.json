@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png",
+      "PackagePath": "staticwebassets\\assets\\images\\4a95c7b6-6277-4d3f-91bb-be5b735204c9Image.png"
+    },
+    {
+      "Id": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\cbcb6f2e-30f0-4f73-874e-4d66f4c0bd26File",
+      "PackagePath": "staticwebassets\\assets\\images"
+    },
+    {
+      "Id": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.App\\wwwroot\\assets\\images\\f9cb5b74-8ae5-4cd4-9b2e-8091553cc159File",
+      "PackagePath": "staticwebassets\\assets\\images"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ApiFinal.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ApiFinal.App.props",
+      "PackagePath": "build\\ApiFinal.App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ApiFinal.App.props",
+      "PackagePath": "buildMultiTargeting\\ApiFinal.App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ApiFinal.App.props",
+      "PackagePath": "buildTransitive\\ApiFinal.App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

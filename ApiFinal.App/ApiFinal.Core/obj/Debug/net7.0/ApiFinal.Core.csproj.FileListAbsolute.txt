@@ -1,0 +1,11 @@
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\bin\Debug\net7.0\ApiFinal.Core.deps.json
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\bin\Debug\net7.0\ApiFinal.Core.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\bin\Debug\net7.0\ApiFinal.Core.pdb
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.AssemblyInfoInputs.cache
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.AssemblyInfo.cs
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.csproj.CoreCompileInputs.cache
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\refint\ApiFinal.Core.dll
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.pdb
+C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ref\ApiFinal.Core.dll

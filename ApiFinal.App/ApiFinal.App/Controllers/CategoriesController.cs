@@ -1,40 +1,51 @@
-﻿using ApiFinal.App.Contexts;
-using ApiFinal.App.Entities;
+﻿using ApiFinal.Service.Dtos.Categories;
+using ApiFinal.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ApiFinal.App.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class CategoriesController : ControllerBase
     {
-        private readonly ApiDbContext _context;
+        private readonly ICategoryService _categoryService;
 
-        public CategoriesController(ApiDbContext context)
+        public CategoriesController(ICategoryService categoryService)
         {
-            _context = context;
+            _categoryService = categoryService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            IEnumerable<Category> categories = 
-                await _context.Categories.ToListAsync();
-            return StatusCode(200, categories);  
+            return StatusCode(200, await _categoryService.GetAllAsync());  
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            Category? category = await _context.Categories.
-                Where(x => x.Id == id).FirstOrDefaultAsync();
+            var res = await _categoryService.GetAsync(id);
+            return StatusCode(res.StatusCode, res);
+        }
 
-            if(category == null)
-            {
-                return StatusCode(404);  
-            }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CategoryPostDto dto)
+        {
+            var res = await _categoryService.CreateAsync(dto);
+            return StatusCode(res.StatusCode, res);
+        }
 
-            return StatusCode(200, category);
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var res = await _categoryService.RemoveAsync(id);
+            return StatusCode(res.StatusCode);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
+        {
+            var res = await _categoryService.UpdateAsync(id, dto);
+            return StatusCode(res.StatusCode, res);
         }
 
         [HttpPost]

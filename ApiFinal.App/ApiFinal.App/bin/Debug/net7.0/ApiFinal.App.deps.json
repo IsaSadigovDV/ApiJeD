@@ -8,14 +8,38 @@
     ".NETCoreApp,Version=v7.0": {
       "ApiFinal.App/1.0.0": {
         "dependencies": {
+          "ApiFinal.Service": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
-          "Microsoft.EntityFrameworkCore": "7.0.14",
           "Microsoft.EntityFrameworkCore.Design": "7.0.14",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.14",
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.14",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
           "ApiFinal.App.dll": {}
+        }
+      },
+      "AutoMapper/12.0.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.0"
+          }
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.0"
+          }
         }
       },
       "Azure.Core/1.25.0": {
@@ -52,6 +76,38 @@
           }
         }
       },
+      "FluentValidation/11.9.0": {
+        "runtime": {
+          "lib/net7.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.9.0.0"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/11.3.0": {
+        "dependencies": {
+          "FluentValidation": "11.9.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.3.0.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.9.0": {
+        "dependencies": {
+          "FluentValidation": "11.9.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.9.0.0"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -79,7 +135,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {},
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/5.1.1": {
         "dependencies": {
           "Azure.Identity": "1.7.0",
@@ -201,6 +257,11 @@
             "assemblyVersion": "7.0.14.0",
             "fileVersion": "7.0.1423.52313"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/7.0.14": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "7.0.14"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -338,7 +399,7 @@
       },
       "Microsoft.IdentityModel.Tokens/6.24.0": {
         "dependencies": {
-          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.CSharp": "4.7.0",
           "Microsoft.IdentityModel.Logging": "6.24.0",
           "System.Security.Cryptography.Cng": "5.0.0"
         },
@@ -607,6 +668,33 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "ApiFinal.Core/1.0.0": {
+        "runtime": {
+          "ApiFinal.Core.dll": {}
+        }
+      },
+      "ApiFinal.Data/1.0.0": {
+        "dependencies": {
+          "ApiFinal.Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.14",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.14"
+        },
+        "runtime": {
+          "ApiFinal.Data.dll": {}
+        }
+      },
+      "ApiFinal.Service/1.0.0": {
+        "dependencies": {
+          "ApiFinal.Data": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "FluentValidation": "11.9.0",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.9.0"
+        },
+        "runtime": {
+          "ApiFinal.Service.dll": {}
+        }
       }
     }
   },
@@ -615,6 +703,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "path": "automapper/12.0.1",
+      "hashPath": "automapper.12.0.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512"
     },
     "Azure.Core/1.25.0": {
       "type": "package",
@@ -629,6 +731,27 @@
       "sha512": "sha512-eHEiCO/8+MfNc9nH5dVew/+FvxdaGrkRL4OMNwIz0W79+wtJyEoeRlXJ3SrXhoy9XR58geBYKmzMR83VO7bcAw==",
       "path": "azure.identity/1.7.0",
       "hashPath": "azure.identity.1.7.0.nupkg.sha512"
+    },
+    "FluentValidation/11.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VneVlTvwYDkfHV5av3QrQ0amALgrLX6LV94wlYyEsh0B/klJBW7C8y2eAtj5tOZ3jH6CAVpr4s1ZGgew/QWyig==",
+      "path": "fluentvalidation/11.9.0",
+      "hashPath": "fluentvalidation.11.9.0.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/11.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jtFVgKnDFySyBlPS8bZbTKEEwJZnn11rXXJ2SQnjDhZ56rQqybBg9Joq4crRLz3y0QR8WoOq4iE4piV81w/Djg==",
+      "path": "fluentvalidation.aspnetcore/11.3.0",
+      "hashPath": "fluentvalidation.aspnetcore.11.3.0.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ko++xvN7HUf4WlHJL6bhsybUj/uho8ApOYIdxGjpF8Ot7Fukz6LRfRJ06H0KXhWqmMHWEbu89hJbjKJHtg7b9g==",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.9.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -651,12 +774,12 @@
       "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
     },
-    "Microsoft.CSharp/4.5.0": {
+    "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
-      "path": "microsoft.csharp/4.5.0",
-      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.Data.SqlClient/5.1.1": {
       "type": "package",
@@ -713,6 +836,13 @@
       "sha512": "sha512-d9hqEw4W/TdQ1WDm03uyFuDoehL6GNq/NMChFaC4dcV60I42vKdUC0fYTuE2QPunVUpf5XUTCkJ6fYGjMos2AA==",
       "path": "microsoft.entityframeworkcore.sqlserver/7.0.14",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.14.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/7.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RjGysXi4k0yM7b2Znyasdhqu5FxOeuyZzo9g2w/ZhP87VsgFeoiykDPs69qIGTjjLbW0N5+srrl439ZQnMlHXw==",
+      "path": "microsoft.entityframeworkcore.tools/7.0.14",
+      "hashPath": "microsoft.entityframeworkcore.tools.7.0.14.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
@@ -1077,6 +1207,21 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "ApiFinal.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApiFinal.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ApiFinal.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
