@@ -2,12 +2,14 @@
 using ApiFinal.Service.Dtos.Products;
 using ApiFinal.Service.Services.Implementations;
 using ApiFinal.Service.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiFinal.App.Admin.Controllers
 {
     [Route("api/admin/[controller]")]
+    [Authorize(Roles ="Admin,SuperAdmin")]
     [ApiController]
     public class ProductsController : ControllerBase
     {

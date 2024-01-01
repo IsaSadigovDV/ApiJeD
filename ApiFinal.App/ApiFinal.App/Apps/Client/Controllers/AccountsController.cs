@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
@@ -36,7 +37,7 @@ namespace ApiFinal.App.Apps.Client.Controllers
             await _userManager.AddToRoleAsync(identityUser, "Admin");
             return Ok();
         }
-
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]LoginDto dto)
         {
             IdentityUser? user = await _userManager.FindByNameAsync(dto.Username);
@@ -65,8 +66,15 @@ namespace ApiFinal.App.Apps.Client.Controllers
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
-
-            return Ok();
+            JwtSecurityToken jwtToken = new JwtSecurityToken(
+                expires:DateTime.Now.AddDays(3),
+                issuer: "https://localhost:44302/",
+                audience: "https://localhost:44302/",
+                claims:claims,
+                signingCredentials:credentials
+                );
+            string token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
+            return Ok(token);
         }
 
         //[HttpPost]

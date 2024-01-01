@@ -8,9 +8,13 @@ using ApiFinal.Service.Services.Interfaces;
 using ApiFinal.Service.Validations.Categories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +28,25 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(opt =>
 {
     opt.Password.RequiredLength = 8;
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<ApiDbContext>();
+
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultScheme=JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(opt =>
+    {
+        opt.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "https://localhost:44302/",
+            ValidAudience = "https://localhost:44302/",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dbd6dc8f-6ee2-4fbb-a38e-764b315caa18"))
+        };
+    });
 
 
 builder.Services.AddCors(o => o.AddPolicy("JedFinal", builder =>
@@ -60,8 +83,8 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
