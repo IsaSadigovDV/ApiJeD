@@ -29,3 +29,8 @@ C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\obj\Debug\net7.
 C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\obj\Debug\net7.0\ApiFinal.Client.pdb
 C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\obj\Debug\net7.0\ApiFinal.Client.genruntimeconfig.cache
 C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\obj\Debug\net7.0\ref\ApiFinal.Client.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Client\obj\Debug\net7.0\ApiFinal.Client.csproj.CopyComplete
