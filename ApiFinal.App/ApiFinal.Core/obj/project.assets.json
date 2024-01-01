@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\SOFT\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
       "projectName": "ApiFinal.Core",
-      "projectPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
-      "packagesPath": "C:\\Users\\SOFT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

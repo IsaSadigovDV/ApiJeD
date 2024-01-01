@@ -1,10 +1,12 @@
 ﻿using ApiFinal.Core.Entities;
 using ApiFinal.Data.Configurations;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiFinal.Data.Contexts
 {
-    public class ApiDbContext:DbContext
+    public class ApiDbContext:IdentityDbContext<IdentityUser>
     {
         public ApiDbContext(DbContextOptions<ApiDbContext> options ):base(options)
         {

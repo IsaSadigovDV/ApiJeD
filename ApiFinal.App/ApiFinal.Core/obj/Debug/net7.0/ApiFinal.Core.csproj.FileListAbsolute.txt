@@ -9,3 +9,15 @@ C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\refint\ApiFinal.Core.dll
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.pdb
 C:\Users\SOFT\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ref\ApiFinal.Core.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\bin\Debug\net7.0\ApiFinal.Core.deps.json
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\bin\Debug\net7.0\ApiFinal.Core.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\bin\Debug\net7.0\ApiFinal.Core.pdb
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.AssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\refint\ApiFinal.Core.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ApiFinal.Core.pdb
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.Core\obj\Debug\net7.0\ref\ApiFinal.Core.dll

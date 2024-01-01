@@ -1,4 +1,5 @@
 ﻿using ApiFinal.Service.Dtos.Accounts;
+using ApiFinal.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,68 +14,24 @@ namespace ApiFinal.App.Apps.Client.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-         private readonly UserManager<IdentityUser> _userManager;
-         private readonly RoleManager<IdentityRole> _roleManager;
-        public AccountsController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
-        {
-            _userManager = userManager;
-            _roleManager = roleManager;
-        }
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody]RegisterDto dto)
-        {
-            IdentityUser identityUser = new IdentityUser
-            {
-                Email= dto.Email,
-                UserName=dto.Username,
-            };
+        private readonly IIdentityService _identityService;
 
-            var result  = await _userManager.CreateAsync(identityUser, dto.Password);
-            if(!result.Succeeded)
-            {
-                return BadRequest(result.Errors);
-            }
-            await _userManager.AddToRoleAsync(identityUser, "Admin");
-            return Ok();
+        public AccountsController(IIdentityService identityService)
+        {
+            _identityService = identityService;
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
+        {
+            var result = await _identityService.Register(dto);
+            return StatusCode(result.StatusCode, result);
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody]LoginDto dto)
+        public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            IdentityUser? user = await _userManager.FindByNameAsync(dto.Username);
-            if(user == null)
-            {
-                return NotFound();
-            }
-
-            if(!await _userManager.CheckPasswordAsync(user, dto.Password))
-            {
-                return NotFound();
-            }
-            string keyStr = "dbd6dc8f-6ee2-4fbb-a38e-764b315caa18";
-            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyStr));
-            SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            List<Claim> claims = new List<Claim> 
-            {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-            };
-
-            var roles = await _userManager.GetRolesAsync(user);
-
-            foreach (string role in roles)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role));
-            }
-            JwtSecurityToken jwtToken = new JwtSecurityToken(
-                expires:DateTime.Now.AddDays(3),
-                issuer: "https://localhost:44302/",
-                audience: "https://localhost:44302/",
-                claims:claims,
-                signingCredentials:credentials
-                );
-            string token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
-            return Ok(token);
+            var result = await _identityService.Login(dto);
+            return StatusCode(result.StatusCode, result);
         }
 
         //[HttpPost]

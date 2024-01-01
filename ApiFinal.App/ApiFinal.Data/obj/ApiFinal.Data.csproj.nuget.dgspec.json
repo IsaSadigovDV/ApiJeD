@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj": {}
+    "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj": {
+    "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
         "projectName": "ApiFinal.Core",
-        "projectPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
-        "packagesPath": "C:\\Users\\SOFT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,21 +55,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj": {
+    "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj",
         "projectName": "ApiFinal.Data",
-        "projectPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj",
-        "packagesPath": "C:\\Users\\SOFT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\ApiFinal.Data.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SOFT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj": {
-                "projectPath": "C:\\Users\\SOFT\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj"
+              "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj": {
+                "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\ApiJeD\\ApiFinal.App\\ApiFinal.Core\\ApiFinal.Core.csproj"
               }
             }
           }
@@ -99,6 +99,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.14, )"
@@ -124,7 +128,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
