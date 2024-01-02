@@ -71,11 +71,9 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Api Final",
-        Version = "v1"
-    });
+    c.SwaggerDoc("admin_v1", new OpenApiInfo{ Title = "admin_v1", Version = "v1" });
+    c.SwaggerDoc("client_v1", new OpenApiInfo{ Title = "client_v1", Version = "v1" });
+
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -104,7 +102,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint($"/swagger/admin_v1/swagger.json", "Admin version API V1");
+        c.SwaggerEndpoint($"/swagger/client_v1/swagger.json", "Client version API V1");
+    });
 }
 
 app.UseCors("JedFinal");

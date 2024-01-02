@@ -24,7 +24,8 @@ namespace ApiFinal.Service.Services.Implementations
         {
             if(await _repository.IsExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower()))
             {
-                return new ApiResponse { StatusCode = 400, Description = "Name already exsist" };
+                //return new ApiResponse { StatusCode = 400, Description = "Name already exists" };
+                throw new ItemAlreadyExist($"{dto.Name} already exists");
             }
 
             Category category = _mapper.Map<Category>(dto);

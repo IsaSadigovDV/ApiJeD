@@ -1,10 +1,16 @@
 ﻿using ApiFinal.Service.Dtos.Categories;
 using ApiFinal.Service.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
+
 namespace ApiFinal.App.Admin.Controllers
 {
     [ApiController]
     [Route("api/admin/[controller]")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
+    [ApiExplorerSettings(GroupName = "admin_v1")]
+
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;

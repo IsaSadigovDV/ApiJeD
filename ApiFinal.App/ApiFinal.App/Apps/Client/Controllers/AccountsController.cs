@@ -10,8 +10,10 @@ using System.Text;
 
 namespace ApiFinal.App.Apps.Client.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "client_v1")]
+
     public class AccountsController : ControllerBase
     {
         private readonly IIdentityService _identityService;

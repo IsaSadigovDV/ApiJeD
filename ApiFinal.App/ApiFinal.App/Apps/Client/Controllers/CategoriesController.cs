@@ -5,6 +5,9 @@ namespace ApiFinal.App.Client.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "client_v1")]
+
+
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;

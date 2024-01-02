@@ -8,9 +8,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiFinal.App.Admin.Controllers
 {
+    [ApiController]
     [Route("api/admin/[controller]")]
     [Authorize(Roles ="Admin,SuperAdmin")]
-    [ApiController]
+    [ApiExplorerSettings(GroupName ="admin_v1")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;

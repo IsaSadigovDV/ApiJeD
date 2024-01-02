@@ -1,14 +1,12 @@
-﻿using ApiFinal.Service.Dtos.Categories;
-using ApiFinal.Service.Dtos.Products;
-using ApiFinal.Service.Services.Implementations;
-using ApiFinal.Service.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using ApiFinal.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiFinal.App.Client.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "client_v1")]
+
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;

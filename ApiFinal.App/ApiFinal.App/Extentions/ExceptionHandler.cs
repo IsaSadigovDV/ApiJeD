@@ -24,7 +24,11 @@ namespace ApiFinal.App.Extentions
                         statuscode = 404;
                         message = exception.Message;
                     }
-
+                    else if(exception is ItemAlreadyExist)
+                    {
+                        statuscode = 400;
+                        message = exception.Message;
+                    }
 
                     if (contextFeature != null)
                     {
