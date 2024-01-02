@@ -9,6 +9,7 @@ using ApiFinal.Service.Services.Interfaces;
 using ApiFinal.Service.Validations.Categories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -95,6 +96,7 @@ builder.Services.AddSwaggerGen(c =>
     }
   });
 });
+builder.Services.AddFluentValidationRulesToSwagger();
 
 var app = builder.Build();
 

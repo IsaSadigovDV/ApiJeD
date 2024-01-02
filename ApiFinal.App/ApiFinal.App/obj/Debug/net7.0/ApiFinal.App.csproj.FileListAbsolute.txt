@@ -261,3 +261,5 @@ C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\M
 C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\MicroElements.Swashbuckle.FluentValidation.dll
+C:\Users\HP\Documents\GitHub\ApiJeD\ApiFinal.App\ApiFinal.App\bin\Debug\net7.0\MicroElements.OpenApi.FluentValidation.dll
