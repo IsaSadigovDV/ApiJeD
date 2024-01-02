@@ -1,6 +1,7 @@
 ﻿using ApiFinal.Core.Entities;
 using ApiFinal.Core.Repositories.Interfaces;
 using ApiFinal.Service.Dtos.Categories;
+using ApiFinal.Service.Exceptions;
 using ApiFinal.Service.Responses;
 using ApiFinal.Service.Services.Interfaces;
 using AutoMapper;
@@ -49,7 +50,8 @@ namespace ApiFinal.Service.Services.Implementations
 
             if (category == null)
             {
-                return new ApiResponse { StatusCode = 404, Description = "Item not found" };
+                //return new ApiResponse { StatusCode = 404, Description = "Item not found" };
+                throw new ItemNotFoundException("Category is not found");
             }
 
             CategoryGetDto getDto = _mapper.Map<CategoryGetDto>(category);

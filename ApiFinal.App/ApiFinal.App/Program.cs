@@ -1,3 +1,4 @@
+using ApiFinal.App.Extentions;
 using ApiFinal.Core.Repositories.Interfaces;
 using ApiFinal.Data.Contexts;
 using ApiFinal.Data.Repositories.Implementations;
@@ -107,7 +108,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("JedFinal");
-
+app.CustomeExceptionHandler();
 app.UseStaticFiles();
 
 app.UseHttpsRedirection();
