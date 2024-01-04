@@ -17,21 +17,24 @@ namespace ApiFinal.App.Apps.Client.Controllers
     public class AccountsController : ControllerBase
     {
         private readonly IIdentityService _identityService;
-
-        public AccountsController(IIdentityService identityService)
+        private readonly ILogger<AccountsController> _logger;
+        public AccountsController(IIdentityService identityService, ILogger<AccountsController> logger)
         {
             _identityService = identityService;
+            _logger = logger;
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto dto)
         {
+            _logger.LogInformation("Register called");
             var result = await _identityService.Register(dto);
             return StatusCode(result.StatusCode, result);
         }
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
+            _logger.LogInformation("Login called");
             var result = await _identityService.Login(dto);
             return StatusCode(result.StatusCode, result);
         }

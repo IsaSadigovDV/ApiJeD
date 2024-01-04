@@ -21,12 +21,13 @@ namespace ApiFinal.App.Client.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            _logger.LogInformation("Product GetAll called");
+            _logger.LogInformation("Product GetAll called by client");
             return StatusCode(200, await _productService.GetAllAsync());
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            _logger.LogInformation("Product GetById called by client");
             var res = await _productService.GetAsync(id);
             return StatusCode(res.StatusCode, res);
         }

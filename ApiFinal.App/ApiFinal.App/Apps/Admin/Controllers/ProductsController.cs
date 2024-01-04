@@ -22,12 +22,13 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            _logger.LogInformation("Product GetAll called");
+            _logger.LogInformation("Product GetAll called by Admin");
             return StatusCode(200, await _productService.GetAllAsync());
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            _logger.LogInformation("Product GetById called by Admin");
             var res = await _productService.GetAsync(id);
             return StatusCode(res.StatusCode, res);
         }
@@ -35,6 +36,7 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] ProductPostDto dto)
         {
+            _logger.LogInformation("Product Created by Admin");
             var res = await _productService.CreateAsync(dto);
             return StatusCode(res.StatusCode, res);
         }
@@ -42,6 +44,7 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
+            _logger.LogInformation("Product Deleted by Admin");
             var res = await _productService.RemoveAsync(id);
             return StatusCode(res.StatusCode);
         }
@@ -49,6 +52,7 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromForm] ProductUpdateDto dto)
         {
+            _logger.LogInformation("Product Updated by Admin");
             var res = await _productService.UpdateAsync(id, dto);
             return StatusCode(res.StatusCode, res);
         }

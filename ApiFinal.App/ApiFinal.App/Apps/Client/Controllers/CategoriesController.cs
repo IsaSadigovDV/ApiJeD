@@ -11,7 +11,7 @@ namespace ApiFinal.App.Client.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
-
+        private readonly ILogger<CategoriesController> _logger;
         public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
@@ -20,11 +20,13 @@ namespace ApiFinal.App.Client.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            _logger.LogInformation("Category GetAll called by client");
             return StatusCode(200, await _categoryService.GetAllAsync());  
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            _logger.LogInformation("Category GetById called by client");
             var res = await _categoryService.GetAsync(id);
             return StatusCode(res.StatusCode, res);
         }

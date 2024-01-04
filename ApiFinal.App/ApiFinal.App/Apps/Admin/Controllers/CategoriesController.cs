@@ -14,20 +14,23 @@ namespace ApiFinal.App.Admin.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
-
-        public CategoriesController(ICategoryService categoryService)
+        private readonly ILogger<CategoriesController> _logger;
+        public CategoriesController(ICategoryService categoryService, ILogger<CategoriesController> logger)
         {
             _categoryService = categoryService;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return StatusCode(200, await _categoryService.GetAllAsync());  
+            _logger.LogInformation("Category GetAll called by Admin");
+            return StatusCode(200, await _categoryService.GetAllAsync());
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
+            _logger.LogInformation("Category GetById called by Admin");
             var res = await _categoryService.GetAsync(id);
             return StatusCode(res.StatusCode, res);
         }
@@ -35,6 +38,7 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CategoryPostDto dto)
         {
+            _logger.LogInformation("Category Created  by Admin");
             var res = await _categoryService.CreateAsync(dto);
             return StatusCode(res.StatusCode, res);
         }
@@ -42,6 +46,7 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
+            _logger.LogInformation("Category Deleted  by Admin");
             var res = await _categoryService.RemoveAsync(id);
             return StatusCode(res.StatusCode);
         }
@@ -49,10 +54,11 @@ namespace ApiFinal.App.Admin.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
         {
+            _logger.LogInformation("Category Updated  by Admin");
             var res = await _categoryService.UpdateAsync(id, dto);
             return StatusCode(res.StatusCode, res);
         }
 
-        
+
     }
 }
