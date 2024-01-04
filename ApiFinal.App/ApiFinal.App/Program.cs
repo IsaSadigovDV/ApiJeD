@@ -17,6 +17,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -67,6 +68,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IIdentityService, IdentityService>();
 builder.Services.AddHttpContextAccessor();
+builder.Host.UseSerilog((context, configuration) => 
+configuration.ReadFrom.Configuration(context.Configuration));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -114,9 +117,8 @@ if (app.Environment.IsDevelopment())
 app.UseCors("JedFinal");
 app.CustomeExceptionHandler();
 app.UseStaticFiles();
-
+app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
