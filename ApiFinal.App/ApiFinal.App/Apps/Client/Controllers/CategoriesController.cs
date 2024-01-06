@@ -20,7 +20,6 @@ namespace ApiFinal.App.Client.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            _logger.LogInformation("Category GetAll called by client");
             return StatusCode(200, await _categoryService.GetAllAsync());  
         }
         [HttpGet("{id}")]
